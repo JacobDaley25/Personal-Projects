@@ -34,6 +34,39 @@ const $aboutMeH1 = $('<h1>')
 $aboutMeH1.text('About Brian "Jacob"')
 $aboutMeDiv.append($aboutMeH1)
 const $aboutMeP = $('<p>')
+const $shopContainer = $('<div>').addClass('shop-container')
+const $shopItemDiv = $('<div>')
+const $shopSquare = $('<square>')
+const $nextButton = $('<button>').addClass('next')
+$nextButton.text('>')
+const $previousButton = $('<button>').addClass('previous')
+$previousButton.text('<')
+const $buyButton = $('<button>')
+const $shopCarouselContainer = $('<div>').addClass('shop-carousel-container')
+$shopCarouselContainer.css('background-img','src="images/market-stall.jpeg"')
+const $carouselContainer = $('<div>').addClass('carousel-container')
+const $carouselImages = $('<div>').addClass('carousel-images')
+const $carouselButtonPrevious = $('<div>').addClass('carousel-button-previous')
+const $carouselButtonNext = $('<div>').addClass('carousel-button-next')
+const $shopContainerImage = $('<img>')
+$shopContainerImage.attr('id','container-image')
+$shopContainerImage.attr('src','images/market-stall.jpeg')
+const $shopImage1 = $('<img>')
+$shopImage1.attr('id','shop-image1')
+$shopImage1.attr('src','images/Rustty-Scissors.jpg')
+const $shopImage2 = $('<img>')
+$shopImage2.attr('id', 'shop-image2')
+$shopImage2.attr('src', 'images/old-lawnmower.jpeg')
+const $shopImage3 = $('<img>')
+$shopImage3.attr('id', 'shop-image3')
+$shopImage3.attr('src','images/fancy-lawnmower.jpeg')
+const $shopImage4 = $('<img>')
+$shopImage4.attr('id', 'shop-image4')
+$shopImage4.attr('src', 'images/hungry-students.jpeg')
+$shopContainer.attr('id', 'shop-container')
+const $shopTextContainer = $('<div>')
+const $shopTextH1 = $('<h1>')
+
 $aboutMeP.text('I am 21, and one of the best possible workforce additions you as a company could make. As mentioned throughout the site as well as my resume, I have expierence in all kinds of different feilds. I have never left a job for any reason other than school. Throughout my life, I have always strove to exceed expectations, continously hone my skills, and to connect with everyone around me. This is across all aspects of my life. Wether it be sports, learning something new, or work. I like to be the best at what I do, and although that\'s not always possible, it is always something that I will work towards. I don\'t believe that the route of self improvement ever ends. I am a business minded individual, always looking for ways to further increase my income. I am also not afraid of taking risks. With my now tenured expierence in the Stock Market, as well as previously competing in professional eSports tournaments, risk is something that I have entertwined myself with. No matter what would be required, I have 100% confidence that I will be able to adapt to the environment, and do the job that needs to be done. I work well both solo and with teams, although I prefer to work on small teams over anything. I have continuously been referred to as a go-to guy who\'s a jack of all trades, and I will strive to continue to be that person as I break into the professional world.')
 $aboutMeDiv.append($aboutMeP)
 
@@ -92,6 +125,8 @@ const button4 = () => {
   $r4Div.append($r4p)
 }
 const goToProjects = () => {
+ $shopContainer.hide()
+ $carouselContainer.hide()
  $lawnMowContainer.hide()
  $('.home-div').hide()
  $('.about-me-div').hide()
@@ -108,7 +143,9 @@ const goToProjects = () => {
 
 const returnToHome = () => {
 $lawnMowContainer.hide()
+$carouselContainer.hide()
 $projectDiv.hide()
+$shopContainer.hide()
 $('.about-me-div').hide()
 $('.home-div').show()
 }
@@ -116,7 +153,9 @@ $('.home-div').show()
 const goToAboutMe = () => {
   $('.home-div').hide()
   $projectDiv.hide()
+  $carouselContainer.hide()
   $lawnMowContainer.hide()
+  $shopContainer.hide()
   $body.append($aboutMeDiv)
   $aboutMeDiv.show()
 }
@@ -137,6 +176,8 @@ const lawnMowGame = () => {
   const $shopDial = $('<p>').addClass('shop-dial')
   const $shopTitle = $('<p>').addClass('shop-title')
   const $square2 = $('<square>').addClass('square2')
+
+
 
   $projectDiv.hide()
   $lawnMowContainer.show()
@@ -185,6 +226,7 @@ const lawnMowGame = () => {
   $square2.css('margin-top', '200')
 
 
+  let itemPrice = [5,50,250,500]
   let player = {
     money: 0,
     tools: ['teeth'],
@@ -236,13 +278,51 @@ const lawnMowGame = () => {
   }
   //////
   const goToShop = () => {
-    const $shopContainer = $('<div>')
     const $shopItemDiv = $('<div>')
     const $shopSquare = $('<square>')
+    const $nextButton = $('<button>').addClass('next')
+    $nextButton.text('>')
+    const $previousButton = $('<button>').addClass('previous')
+    $previousButton.text('<')
     const $buyButton = $('<button>')
+    const $shopCarouselContainer = $('<div>').addClass('shop-carousel-container')
+    $shopCarouselContainer.css('background-img','src="images/market-stall.jpeg"')
+    const $carouselContainer = $('<div>').addClass('carousel-container')
+    const $carouselImages = $('<div>').addClass('carousel-images')
+    const $carouselButtonPrevious = $('<div>').addClass('carousel-button-previous')
+    const $carouselButtonNext = $('<div>').addClass('carousel-button-next')
+    const $shopContainerImage = $('<img>')
+    $shopContainerImage.attr('id','container-image')
+    $shopContainerImage.attr('src','images/market-stall.jpeg')
+    const $shopImage1 = $('<img>')
+    $shopImage1.attr('id','shop-image1')
+    $shopImage1.attr('src','images/Rustty-Scissors.jpg')
+    const $shopImage2 = $('<img>')
+    $shopImage2.attr('id', 'shop-image2')
+    $shopImage2.attr('src', 'images/old-lawnmower.jpeg')
+    const $shopImage3 = $('<img>')
+    $shopImage3.attr('id', 'shop-image3')
+    $shopImage3.attr('src','images/fancy-lawnmower.jpeg')
+    const $shopImage4 = $('<img>')
+    $shopImage4.attr('id', 'shop-image4')
+    $shopImage4.attr('src', 'images/hungry-students.jpeg')
     $shopContainer.attr('id', 'shop-container')
     $shopContainer.append($shopItemDiv)
+    $shopContainer.append($carouselContainer)
+    $carouselImages.append($shopImage1)
+    $carouselImages.append($shopImage2)
+    $carouselImages.append($shopImage3)
+    $carouselImages.append($shopImage4)
+    $carouselContainer.css('padding','10px')
+    $carouselContainer.append($carouselImages)
+    $carouselContainer.append($carouselButtonPrevious)
+    $carouselButtonPrevious.append($previousButton)
+    $carouselContainer.append($carouselButtonNext)
+    $carouselButtonNext.append($nextButton)
+    $carouselContainer.append($carouselImages)
     $buyButton.attr('id', 'buyButton')
+    $shopContainer.append($shopCarouselContainer)
+    $carouselContainer.append($shopTextH1)
     const $leaveShop = $('<button>')
     $leaveShop.attr('id', 'leaveButton')
     $buyButton.text('Buy Item')
@@ -250,7 +330,7 @@ const lawnMowGame = () => {
     $lawnMowContainer.hide()
     $shopDial.text('You\'ve arrived at the shop!');
     $shopSquare.append($shopDial)
-    $shopContainer.css('background', '#1DACD6')
+    //$shopContainer.css('background', '#1DACD6')
     $shopContainer.css('background-size', 'cover')
     $shopContainer.css('width', '100%')
     $shopContainer.css('height', '100%')
@@ -265,26 +345,32 @@ const lawnMowGame = () => {
     $buyButton.css('margin-left', '250px')
     $shopSquare.css('margin-left', '53px')
     $shopSquare.css('bottom', '300px')
+    $shopContainer.show()
+    $shopCarouselContainer.show()
+    $carouselContainer.show()
 
-  if (player.money>=5) {
-    $shopSquare.append('There\'s a pair of rusty scissors on display.')
-  }
-  if (player.money>=25)[
-    $shopSquare.append('There\'s an old lawnmower on display')
-  ]
-  if (player.money>=250){
-    $shopSquare.append('There\'s a fancy lawnmower on display')
-  }
-  if (player.money>=500){
-    $shopSquare.append('There\'s a team of hungry students on display')
-  }
-  if (player.money < 5) {
-    $shopSquare.empty()
-    $shopSquare.append('The shopkeeper says they dont have time for broke people. Better mow more lawns');
-  }
+
+  // if (player.money>=5) {
+  //   $shopSquare.append('There\'s a pair of rusty scissors on display.')
+  // }
+  // if (player.money>=25)[
+  //   $shopSquare.append('There\'s an old lawnmower on display')
+  // ]
+  // if (player.money>=250){
+  //   $shopSquare.append('There\'s a fancy lawnmower on display')
+  // }
+  // if (player.money>=500){
+  //   $shopSquare.append('There\'s a team of hungry students on display')
+  // }
+  // if (player.money < 5) {
+  //   $shopSquare.empty()
+  //   $shopSquare.append('The shopkeeper says they dont have time for broke people. Better mow more lawns');
+  // }
     // $leaveShop.css('margin-left', '200px')
 
     const leaveShop = () => {
+      $shopCarouselContainer.hide()
+      $carouselContainer.hide()
       $shopContainer.hide()
       $lawnMowContainer.show()
     }
@@ -313,7 +399,7 @@ const lawnMowGame = () => {
         }
 
       ////////
-    //  const buyItem = () => {
+
 
   //     if (buyPrompt.toLowerCase('')==='yes'|| buyPrompt.toLowerCase('')==='y') {
   //       player.money -=5
@@ -434,8 +520,139 @@ const lawnMowGame = () => {
   // }
 
   $(() => {
-    $buyButton.on('click', )
-    $leaveShop.on('click', leaveShop )
+    currentImgIndex = 0
+  numOfImages= $('.carousel-images').children().length - 1
+  $('.next').on('click', ()=> {
+    $('.carousel-images').children().eq(currentImgIndex).css('display', 'none')
+    if (currentImgIndex < numOfImages) {
+      currentImgIndex++
+    } else {
+      currentImgIndex = 0
+    }
+    if (currentImgIndex===0) {
+    $shopTextH1.empty()
+    $shopTextH1.text('A pair of Rusty Scissors! The cost is $5')
+  }
+    if (currentImgIndex===1){
+      $shopTextH1.empty()
+      $shopTextH1.text('An Old Lawnmower! The cost is $50')
+    }
+    if (currentImgIndex===2){
+      $shopTextH1.empty()
+      $shopTextH1.text('A Fancy Lawnmower! The cost is $250')
+    }
+    if (currentImgIndex===3){
+      $shopTextH1.empty()
+      $shopTextH1.text('A Team of Hungry Students! The cost is $500')
+    }
+    $('.carousel-images').children().eq(currentImgIndex).css('display', 'block')
+  })
+  $('.previous').on('click', () => {
+    $('.carousel-images').children().eq(currentImgIndex).css('display', 'none')
+    if (currentImgIndex > 0) {
+        currentImgIndex--
+    } else {
+        currentImgIndex = numOfImages
+    }
+    if (currentImgIndex===0) {
+    $shopTextH1.empty()
+    $shopTextH1.text('A pair of Rusty Scissors! The cost is $5')
+  }
+    if (currentImgIndex===1){
+      $shopTextH1.empty()
+      $shopTextH1.text('An Old Lawnmower! The cost is $50')
+    }
+    if (currentImgIndex===2){
+      $shopTextH1.empty()
+      $shopTextH1.text('A Fancy Lawnmower! The cost is $250')
+    }
+    if (currentImgIndex===3){
+      $shopTextH1.empty()
+      $shopTextH1.text('A Team of Hungry Students! The cost is $500')
+    }
+    $('.carousel-images').children().eq(currentImgIndex).css('display', 'block')
+  })
+  const buyItem = () => {
+    for (let i = currentImgIndex; i<=currentImgIndex.length;i) {
+       if (player.money >= itemPrice[i]) {
+         $('.money-total').empty()
+                $shopSquare.empty()
+                $shopSquare.append('You bought the Item!');
+                if (currentImgIndex===0&&player.money>=5){
+                  player.money-=5
+                  $('.money-total').append('money:',player.money)
+                player.tools.push('Rusty Scissors')
+                $('.bag-items').append('Rusty Scissors')
+                  let equipPrompt = prompt('Would you like to equip the Rusty Scissors? Y/N')
+                  if (equipPrompt.toLowerCase('')==='y'||equipPrompt.toLowerCase(' ')===' y') {
+                    equipTool('Rusty Scissors')
+                    $shopSquare.empty()
+                    $shopSquare.append('You equipped the Rusty Scissors.');
+                    }   else {
+                          $square2.append('You did not equip the Rusty Scissors.');
+                          }
+                        }
+                        if (currentImgIndex===1&&player.money>=25){
+                          player.money -= 25
+                                    $('.money-total').empty()
+                                  $('.money-total').append('money:',player.money)
+                                  $shopSquare.empty()
+                                  $shopSquare.append('You bought the old lawnmower');
+                                  player.tools.push('Old Lawnmower')
+                                  $('.bag-items').append('Old Lawnmower')
+                                  let equipPrompt = prompt('Would you like to equip the Old Lawnmower? Y/N')
+                                  if (equipPrompt.toLowerCase('')===('y'||'yes')) {
+                                    equipTool('lawnmower')
+                                    $shopSquare.empty()
+                                    $shopSquare.append('You equipped the Old Lawnmower.');
+                                    }   else {
+                                          $shopSquare.empty()
+                                          $shopSquare.append('You did not equip the Old Lawnmower.');
+                                          }
+                                        }
+                        if (currentImgIndex===2&&player.money>=250) {
+                          $('.money-total').empty()
+                                 player.money -= 250
+                                 $('.money-total').append('money',player.money)
+                                 $shopSquare.empty()
+                                 $shopSquare.append('You bought the fancy lawnmower');
+                                 player.tools.push('Fancy Lawnmower')
+                                 $('.bag-items').append('Fancy Lawnmower')
+                                 let equipPrompt = prompt('Would you like to equip the Fancy Lawnmower? Y/N')
+                                 if (equipPrompt.toLowerCase('')===('y'||'yes')) {
+                                   equipTool('Fancy Lawnmower')
+                                   $shopSquare.empty()
+                                   $shopSquare.append('You equipped the Fancy Lawnmower.');
+                                   }   else {
+                                     $shopSquare.empty()
+                                         $shopSquare.append('You did not equip the Fancy Lawnmower.');
+                                         }
+                        }
+                        if (currentImgIndex===3&&player.money>=500){
+                          player.money -= 500
+                                  $('.money-total').empty()
+                                $('.money-total').append(player.money)
+                                $shopSquare.empty()
+                                $shopSquare.append('You bought the team of starving students');
+                                player.tools.push('Team of Starving Students')
+                                $('.bag-items').append('Team of Starving Students')
+                                let equipPrompt = prompt('Would you like to equip the team of starving students? Y/N')
+                                if (equipPrompt.toLowerCase('')===('y'||'yes')) {
+                                  equipTool('Team of Starving Students')
+                                  $shopSquare.empty()
+                                  $shopSquare.append('You equipped the Team of Starving Students.');
+                                  }   else {
+                                    $square2.empty()
+                                        $square2.append('You did not equip the Team of Starving Students.');
+                                        }
+                        }
+
+       }
+
+     }
+  }
+  $buyButton.on('click', buyItem)
+  $leaveShop.on('click', leaveShop )
   })
 
   }
