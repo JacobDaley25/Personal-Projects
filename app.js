@@ -180,7 +180,8 @@ $(() => {
   $r1Div.append($r1p)
 
 
-
+  $aboutMeDiv.hide()
+  $shopContainer.hide()
 
 
   const button1 = () => {
