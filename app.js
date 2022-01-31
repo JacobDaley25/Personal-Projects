@@ -182,6 +182,7 @@ $(() => {
 
   $aboutMeDiv.hide()
   $shopContainer.hide()
+  $projectDiv.hide()
 
 
   const button1 = () => {
