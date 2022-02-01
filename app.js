@@ -783,6 +783,9 @@ setInterval(function() {
                           }
 
          }
+         if (player.money<itemPrice[i]){
+           $alert('You don\'t have enough money')
+         }
 
        }
 
