@@ -710,11 +710,12 @@ setInterval(function() {
     const buyItem = () => {
       let i = currentImgIndex
       if (player.money < itemPrice[i]){
-        alert('You don\'t have enough money')
+        $shopSquare.empty()
+        $shopSquare.append('You don\'t have enough money')
       }
          if (player.money >= itemPrice[i]) {
            $('.money-total').empty()
-                  $shopSquare.empty()
+
                   $shopSquare.append('You bought the Item!');
                   if (currentImgIndex===0&&player.money>=5){
                     player.money-=5
@@ -724,7 +725,7 @@ setInterval(function() {
                     let equipPrompt = prompt('Would you like to equip the Rusty Scissors? Y/N')
                     if (equipPrompt.toLowerCase('')==='y'||equipPrompt.toLowerCase(' ')===' y') {
                       equipTool('Rusty Scissors')
-                      $shopSquare.empty()
+                      
                       $shopSquare.append('You equipped the Rusty Scissors.');
                       }   else {
                             $square2.append('You did not equip the Rusty Scissors.');
