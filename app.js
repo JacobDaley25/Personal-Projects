@@ -710,7 +710,7 @@ setInterval(function() {
     const buyItem = () => {
       let i = currentImgIndex
       if (player.money < itemPrice[i]){
-        $alert('You don\'t have enough money')
+        alert('You don\'t have enough money')
       }
          if (player.money >= itemPrice[i]) {
            $('.money-total').empty()
