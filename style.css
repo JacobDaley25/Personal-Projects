@@ -6,6 +6,7 @@ header{
   text-align: center;
   color:white;
 }
+
 .aboutMeH1{
   font-family: 'Permanent Marker', cursive;
   text-align: center;
@@ -241,7 +242,9 @@ color:white;
 
 }
 
-
+.square2{
+  padding:10px;
+}
 
 @media (max-width: 1200px) {
   body{
