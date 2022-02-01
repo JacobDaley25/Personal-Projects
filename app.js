@@ -7,17 +7,17 @@ $(() => {
   const $aboutMeDiv = $('<div>').addClass('about-me-div')
   const $reasons = $('.reasons')
   const $r1Div = $('<div>')
-  const $r1H1= $('<h1>')
-  const $r1p = $('<p>')
+  const $r1H1= $('<h1>').addClass('r1H1')
+  const $r1p = $('<p>').addClass('r1p')
   const $r2Div = $('<div>')
-  const $r2H1 = $('<h1>')
-  const $r2p = $('<p>')
+  const $r2H1 = $('<h1>').addClass('r2H1')
+  const $r2p = $('<p>').addClass('r2p')
   const $r3Div = $('<div>')
-  const $r3H1 = $('<h1>')
-  const $r3p = $('<p>')
+  const $r3H1 = $('<h1>').addClass('r3H1')
+  const $r3p = $('<p>').addClass('r3p')
   const $r4Div = $('<div>')
-  const $r4H1 = $('<h1>')
-  const $r4p = $('<p>')
+  const $r4H1 = $('<h1>').addClass('r4H1')
+  const $r4p = $('<p>').addClass('r4p')
   const $projectDiv = $('<div>')
   const $projectH1 = $('<h1>')
   const $projectP = $('<p>').addClass('Game')
@@ -194,7 +194,7 @@ setInterval(function() {
   .fadeIn(1000)
   .end()
   .appendTo('#bannerbox');
-}, 9000);
+}, 10000);
 
 
   const button1 = () => {
@@ -1023,10 +1023,10 @@ setInterval(function() {
       $shopButton.on('click', goToShop)
     })
   }
-  $('#1').on('click', button1);
-  $('#2').on('click', button2);
-  $('#3').on('click', button3);
-  $('#4').on('click', button4);
+  $('#r1').on('click', button1);
+  $('#r2').on('click', button2);
+  $('#r3').on('click', button3);
+  $('#r4').on('click', button4);
   $('#home').on('click', returnToHome)
   $('#projects').on('click', goToProjects)
   $('#about-me').on('click', goToAboutMe)
