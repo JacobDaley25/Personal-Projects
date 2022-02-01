@@ -82,7 +82,7 @@ $(() => {
   $leaveShop.attr('id', 'leaveButton')
   $buyButton.attr('id', 'buyButton')
 
-  $aboutMeP.text('I am 21, and one of the best possible workforce additions you as a company could make. As mentioned throughout the site as well as my resume, I have expierence in all kinds of different feilds. I have never left a job for any reason other than school. Throughout my life, I have always strove to exceed expectations, continously hone my skills, and to connect with everyone around me. This is across all aspects of my life. Wether it be sports, learning something new, or work. I like to be the best at what I do, and although that\'s not always possible, it is always something that I will work towards. I don\'t believe that the route of self improvement ever ends. I am a business minded individual, always looking for ways to further increase my income. I am also not afraid of taking risks. With my now tenured expierence in the Stock Market, as well as previously competing in professional eSports tournaments, risk is something that I have entertwined myself with. No matter what would be required, I have 100% confidence that I will be able to adapt to the environment, and do the job that needs to be done. I work well both solo and with teams, although I prefer to work on small teams over anything. I have continuously been referred to as a go-to guy who\'s a jack of all trades, and I will strive to continue to be that person as I break into the professional world.')
+  $aboutMeP.text('I am 21, and one of the best possible workforce additions you as a company could make. As mentioned throughout the site as well as my resume, I have expierence in all kinds of different feilds. I have never left a job for any reason other than school. Throughout my life, I have always strove to exceed expectations, continously hone my skills, and to connect with everyone around me. This is across all aspects of my life. Wether it be sports, learning something new, or work. I like to be the best at what I do, and although that\'s not always possible, it is always something that I will work towards. I don\'t believe that the route of self improvement ever ends. I am a business minded individual, always looking for ways to further increase my income. I am also not afraid of taking risks. With my now tenured expierence in the Stock Market, as well as previously competing in professional eSports tournaments, risk is something that I have intertwined myself with. No matter what would be required, I have 100% confidence that I will be able to adapt to the environment, and do the job that needs to be done. I work well both solo and with teams, although I prefer to work on small teams over anything. I have continuously been referred to as a go-to guy who\'s a jack of all trades, and I will strive to continue to be that person as I break into the professional world.')
   $aboutMeDiv.append($aboutMeP)
   $body.append($lawnMowContainer)
   $lawnMowStart.text('Start Game')
@@ -127,10 +127,11 @@ $(() => {
   $square2.css('background', 'white')
   $square2.css('bottom', '0')
   $square2.css('margin-top', '200')
+  $shopContainer.append($carouselContainer)
   $shopContainer.append($buyButton)
   $shopContainer.append($leaveShop)
   $shopContainer.append($shopItemDiv)
-  $shopContainer.append($carouselContainer)
+
   $carouselImages.append($shopImage1)
   $carouselImages.append($shopImage2)
   $carouselImages.append($shopImage3)
@@ -158,7 +159,7 @@ $(() => {
   $shopSquare.css('background','white')
   $shopSquare.css('width','30%')
   $shopSquare.css('height','15%')
-  $buyButton.css('margin-top', '100px')
+  $buyButton.css('margin-top', '20px')
   $buyButton.css('margin-bottom', '150px')
   $buyButton.css('margin-left', '250px')
   $shopSquare.css('margin-left', '53px')
@@ -249,6 +250,7 @@ setInterval(function() {
     $r4Div.append($r4p)
   }
   const goToProjects = () => {
+    $('.flex-main').hide()
    $shopContainer.hide()
    $carouselContainer.hide()
    $lawnMowContainer.hide()
@@ -271,10 +273,12 @@ setInterval(function() {
   $projectDiv.hide()
   $shopContainer.hide()
   $('.about-me-div').hide()
+  $('.flex-main').show()
   $('.home-div').show()
   }
 
   const goToAboutMe = () => {
+    $('.flex-main').hide()
     $('.home-div').hide()
     $projectDiv.hide()
     $carouselContainer.hide()
@@ -506,28 +510,28 @@ setInterval(function() {
         $lawnMowContainer.show()
       }
 
-      if (player.equippedTool[0] === 'teeth' && player.money>=5) {
-        $shopSquare.empty()
-      $shopSquare.append('The Items on display are: Rusty Scissors for $5');
-        // let buyPrompt = prompt('You have at least $5. Would you like to buy the pair of Rusty Scissors? Yes/No?')
-        $shopSquare.append('You have at least $5. Would you like to buy the pair of Rusty Scissors? Yes/No?')
-      }
-      if ((player.equippedTool[0] === 'Rusty Scissors' || player.equippedTool[0]==='rusty scissors') && player.money>=25) {
-        $shopSquare.empty()
-        $shopSquare.append('The Item on display is a old lawnmower!');
-          let buyPrompt2 = prompt('You have at least $25. Would you like to buy the old lawnmower? Yes/No:    ')
-        }
-        if ((player.equippedTool[0] === 'Old Lawnmower' || player.equippedTool[0] === 'old lawnmower') && player.money>=250) {
-          $shopSquare.empty()
-          $shopSquare.append('The Item on display is a Fancy Lawnmower!');
-        //  if (player.money >= 250) {
-            let buyPrompt3 = prompt('You have at least $250. Would you like to buy the fancy lawnmower? Yes/No')
-          }
-          if ((player.equippedTool[0] === 'fancy lawnmower'|| player.equippedTool[0]==='Fancy Lawnmower') && player.money>=500) {
-            $shopSquare.empty()
-          $shopSquare.append('The item on display is a team of starving students!');
-            let buyPrompt4 = prompt('You have at least $500. Would you like to buy the team of starving students? Yes/No')
-          }
+      // if (player.equippedTool[0] === 'teeth' && player.money>=5) {
+      //   $shopSquare.empty()
+      // $shopSquare.append('The Items on display are: Rusty Scissors for $5');
+      //   // let buyPrompt = prompt('You have at least $5. Would you like to buy the pair of Rusty Scissors? Yes/No?')
+      //   $shopSquare.append('You have at least $5. Would you like to buy the pair of Rusty Scissors? Yes/No?')
+      // }
+      // if ((player.equippedTool[0] === 'Rusty Scissors' || player.equippedTool[0]==='rusty scissors') && player.money>=25) {
+      //   $shopSquare.empty()
+      //   $shopSquare.append('The Item on display is a old lawnmower!');
+      //     let buyPrompt2 = prompt('You have at least $25. Would you like to buy the old lawnmower? Yes/No:    ')
+      //   }
+      //   if ((player.equippedTool[0] === 'Old Lawnmower' || player.equippedTool[0] === 'old lawnmower') && player.money>=250) {
+      //     $shopSquare.empty()
+      //     $shopSquare.append('The Item on display is a Fancy Lawnmower!');
+      //   //  if (player.money >= 250) {
+      //       let buyPrompt3 = prompt('You have at least $250. Would you like to buy the fancy lawnmower? Yes/No')
+      //     }
+      //     if ((player.equippedTool[0] === 'fancy lawnmower'|| player.equippedTool[0]==='Fancy Lawnmower') && player.money>=500) {
+      //       $shopSquare.empty()
+      //     $shopSquare.append('The item on display is a team of starving students!');
+      //       let buyPrompt4 = prompt('You have at least $500. Would you like to buy the team of starving students? Yes/No')
+      //     }
 
         ////////
 
