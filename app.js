@@ -185,6 +185,18 @@ $(() => {
   $projectDiv.hide()
 
 
+  $("#bannerbox > div:gt(0)").hide();
+
+setInterval(function() {
+  $('#bannerbox > div:first')
+  .fadeOut(1000)
+  .next()
+  .fadeIn(1000)
+  .end()
+  .appendTo('#bannerbox');
+}, 9000);
+
+
   const button1 = () => {
     $lawnMowContainer.hide()
     $r2Div.hide()
