@@ -175,7 +175,7 @@ $(() => {
     $shopSquare.css('margin-left', '53px')
     $shopSquare.css('bottom', '300px')
 
-    $projectH1.text('Finished Projects:')
+    
     $projectP.text('Lawnmower Game')
     $projectDiv.append($projectH1)
     $projectDiv.append($projectP)
