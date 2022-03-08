@@ -18,7 +18,7 @@ $(() => {
   const $r4Div = $('<div>')
   const $r4H1 = $('<h1>').addClass('r4H1')
   const $r4p = $('<p>').addClass('r4p')
-  const $projectDiv = $('<div>')
+  const $projectDiv = $('.project-div')
   const $projectH1 = $('<h1>')
   const $projectP = $('<p>').addClass('Game')
   const $projectPAside = $('<aside>')
@@ -183,7 +183,7 @@ $(() => {
     $playButton.text('Play')
     $playButton.css('margin-left', '10')
     $projectP.append($playButton)
-
+    $projectDiv.append()
     $body.append($aboutMeDiv)
 
     $('.square2').append('Welcome to the Lawnmowing Game!')
